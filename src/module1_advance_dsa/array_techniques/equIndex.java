@@ -99,4 +99,5 @@ public class equIndex {
         }
         return -1;
     }
+
 }
