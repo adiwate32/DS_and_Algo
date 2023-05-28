@@ -1,4 +1,4 @@
-package module1_advance_dsa.array_1d;
+package module1_3_advance_dsa.array_1d;
 
 import java.util.ArrayList;
 

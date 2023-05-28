@@ -1,4 +1,4 @@
-package module1_advance_dsa.array_2d;
+package module1_4_advance_dsa.array_2d;
 
 /**
  Given a binary sorted matrix A of size N x N. Find the row with the maximum number of 1.

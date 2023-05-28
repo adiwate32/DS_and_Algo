@@ -1,4 +1,4 @@
-package module1_advance_dsa.array_2d;
+package module1_4_advance_dsa.array_2d;
 
 /**
  Given a 2D integer matrix A of size N x N, find a B x B sub-matrix where B<= N and B>= 1, such that the sum of all the elements in the submatrix is maximum.

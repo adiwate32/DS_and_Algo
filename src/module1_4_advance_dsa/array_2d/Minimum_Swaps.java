@@ -1,4 +1,4 @@
-package module1_advance_dsa.array_2d;
+package module1_4_advance_dsa.array_2d;
 
 /**
  Given an array of integers A and an integer B, find and return the minimum number of swaps required to bring all the numbers less than or equal to B together.

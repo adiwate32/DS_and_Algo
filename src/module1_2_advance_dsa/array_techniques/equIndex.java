@@ -1,4 +1,4 @@
-package module1_advance_dsa.array_techniques;
+package module1_2_advance_dsa.array_techniques;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package module1_advance_dsa.array_2d;
+package module1_4_advance_dsa.array_2d;
 
 /**
  Given a row-wise and column-wise sorted matrix A of size N * M.
