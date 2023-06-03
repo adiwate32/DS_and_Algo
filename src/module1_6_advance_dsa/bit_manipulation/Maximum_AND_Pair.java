@@ -1,4 +1,4 @@
-package module_1_6_advance_dsa.bit_manipulation;
+package module1_6_advance_dsa.bit_manipulation;
 
 /**
  Given an array A. For every pair of indices i and j (i != j), find the maximum A[i] & A[j].

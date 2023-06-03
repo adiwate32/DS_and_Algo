@@ -1,4 +1,4 @@
-package module_1_6_advance_dsa.bit_manipulation;
+package module1_6_advance_dsa.bit_manipulation;
 
 /**
  Given an array of integers, every element appears thrice except for one, which occurs once.

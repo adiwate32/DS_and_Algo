@@ -1,4 +1,4 @@
-package module_1_6_advance_dsa.bit_manipulation;
+package module1_6_advance_dsa.bit_manipulation;
 
 /**
  Given an array of integers A, every element appears twice except for one. Find that integer that occurs once.

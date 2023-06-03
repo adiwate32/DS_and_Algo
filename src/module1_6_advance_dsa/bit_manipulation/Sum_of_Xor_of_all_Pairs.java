@@ -1,4 +1,4 @@
-package module_1_6_advance_dsa.bit_manipulation;
+package module1_6_advance_dsa.bit_manipulation;
 
 /**
  Given an array A of N integers. Find the sum of bitwise XOR all pairs of numbers in the array.
