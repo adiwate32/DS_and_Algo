@@ -47,29 +47,29 @@ class Solution:
     # @return an integer
     def findRank(self, A):
 
-    A_sort = list(A)
-    A_sort.sort()
-    n = len(A)
+        A_sort = list(A)
+        A_sort.sort()
+        n = len(A)
 
-    fact = [1] * (n)
+        fact = [1] * (n)
 
-    mod = 1000003
+        mod = 1000003
 
-    ans = 0
+        ans = 0
 
-    for i in range(2, n):
-        fact[i] = (fact[i-1] * i) % mod
+        for i in range(2, n):
+            fact[i] = (fact[i-1] * i) % mod
 
-    for i in range(n):
+        for i in range(n):
 
-        j = 0
+            j = 0
 
-        while(A_sort[j] != A[i]):
-            j += 1
+            while A_sort[j] != A[i]:
+                j += 1
 
-        if(j > 0):
-            ans += (fact[len(A_sort) - 1] % mod * j % mod) % mod
+            if j > 0:
+                ans += (fact[len(A_sort) - 1] % mod * j % mod) % mod
 
-        A_sort.remove(A[i])
+            A_sort.remove(A[i])
 
-    return (ans + 1) % mod
+        return (ans + 1) % mod

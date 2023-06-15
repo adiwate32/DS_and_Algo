@@ -45,23 +45,22 @@ Explanation 2:
 We can see that this was the only unique path with minimal moves to move all disks from the first to the third tower.
 """
 
+
 class Solution:
     # @param A : integer
-    # @return a list of list of integers
+    # @return a list of integers
     def towerOfHanoi(self, A):
-
         ans = []
 
         def TOH(A, src, mid, dest):
             if A == 0:
                 return
 
-            TOH(A-1, src, dest, mid) #moving n-1 disks from 1 to 2 via 3
+            TOH(A - 1, src, dest, mid)  # moving n-1 disks from 1 to 2 via 3
 
-            ans.append([A, src, dest]) #
+            ans.append([A, src, dest])
 
-            TOH(A-1, mid, src, dest) #moving n-1 disks from 2 to 3 via 1
-
+            TOH(A - 1, mid, src, dest)  # moving n-1 disks from 2 to 3 via 1
 
         TOH(A, 1, 2, 3)
 

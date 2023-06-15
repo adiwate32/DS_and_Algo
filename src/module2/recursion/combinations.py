@@ -49,6 +49,7 @@ Explanation 1:
 All the possible combinations of size 2 in sorted order.
 """
 
+
 class Solution:
     # @param A : integer
     # @param B : integer

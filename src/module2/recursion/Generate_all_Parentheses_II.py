@@ -28,24 +28,24 @@ Explanation 1:
 Explanation 2:
  All paranthesis are given in the output list.
 """
+
+
 class Solution:
     # @param A : integer
     # @return a list of strings
     def generateParenthesis(self, A):
+        lst = []
 
-    lst = []
+        def valid_parenthesis(A, s, opening, closing):
+            if len(s) == 2 * A:
+                lst.append(s)
 
-    def valid_parenthesis(A, s, opening, closing):
-        if(len(s) == 2 * A):
-            lst.append(s)
+            if opening < A:
+                valid_parenthesis(A, s + '(', opening + 1, closing)
 
-        if(opening < A):
-            valid_parenthesis(A, s + '(', opening+1, closing)
+            if closing < opening:
+                valid_parenthesis(A, s + ')', opening, closing + 1)
 
-        if(closing < opening):
-            valid_parenthesis(A, s + ')', opening, closing+1)
+        valid_parenthesis(A, '', 0, 0)
 
-
-    valid_parenthesis(A, '', 0, 0)
-
-    return lst
+        return lst

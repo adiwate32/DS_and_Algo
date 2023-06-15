@@ -44,6 +44,9 @@ Explanation 2:
 """
 
 import collections
+import math
+
+
 class Solution:
     # @param A : list of integers
     # @return an integer
@@ -59,30 +62,30 @@ class Solution:
             pf[1] = False
 
             for i in range(2, int(math.sqrt(n)) + 1):
-                if pf[i] == True:
-                    for j in range(i*i, n+1, i):
+                if pf[i]:
+                    for j in range(i * i, n + 1, i):
                         pf[j] = False
             return pf
 
-        l = A[n-1]
+        l = A[n - 1]
         pf = seive(l)
 
         primes = [0] * (l + 1)
-        for i in range(2, l+1):
-            if pf[i] == True:
-                primes[i] = primes[i-1] + 1
+        for i in range(2, l + 1):
+            if pf[i]:
+                primes[i] = primes[i - 1] + 1
 
             else:
-                primes[i] = primes[i-1]
+                primes[i] = primes[i - 1]
 
         hash_map = collections.defaultdict(int)
         for i in A:
-            if i==1:
+            if i == 1:
                 continue
             else:
                 hash_map[primes[i]] += 1
         ans = 0
-        for k,v in hash_map.items():
+        for k, v in hash_map.items():
             ans += (math.pow(2, v) - 1) % mod
 
         return int(ans % mod)

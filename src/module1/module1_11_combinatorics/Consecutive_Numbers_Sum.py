@@ -37,6 +37,7 @@ Explanation 2:
  => [1, 2, 3, 4, 5]
 """
 
+
 class Solution:
     # @param A : integer
     # @return an integer
@@ -44,11 +45,11 @@ class Solution:
         ans = 0
         k = 1
 
-        while((k * (k + 1)) <= 2 * A):
+        while (k * (k + 1)) <= 2 * A:
 
             rem = A - (k * (k + 1)) / 2
 
-            if(rem % k == 0):
+            if rem % k == 0:
                 ans += 1
 
             k += 1
