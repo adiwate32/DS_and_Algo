@@ -57,15 +57,16 @@ class Solution:
     def combine(self, A, B):
         ans = []
 
-        def backtrack(start, combination):
-            if len(combination) == B:
-                ans.append(combination[:])  # Append a copy of the combination to the result
+        def backtrack(idx, combination):
+            if idx > A:
+                if len(combination) == B:
+                    ans.append(combination[:])  # Append a copy of the combination to the result
                 return
 
-            for num in range(start, A + 1):
-                combination.append(num)  # Add the current number to the combination
-                backtrack(num + 1, combination)  # Recursively generate combinations with the next numbers
-                combination.pop()  # Remove the current number from the combination
+            combination.append(idx)  # Add the current number to the combination
+            backtrack(idx + 1, combination)  # Recursively generate combinations with the next numbers
+            combination.pop()  # Remove the current number from the combination
+            backtrack(idx+1, combination)
 
         backtrack(1, [])
         return ans
