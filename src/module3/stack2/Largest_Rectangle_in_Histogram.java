@@ -36,31 +36,33 @@ import java.util.Stack;
  Largest rectangle has area 2.
  */
 public class Largest_Rectangle_in_Histogram {
-    public int largestRectangleArea(int[] A) {
+    public int largestRectangleArea(int[] heights) {
 
-        int n = A.length;
-        int[] left = nearest_left(A, n);
-        int[] right = nearest_right(A, n);
+        int n = heights.length;
+        int[] left = nextSmallerLeft(heights, n);
+        int[] right = nextSmallerRight(heights, n);
 
-        int maxAns = 0;
+        int ans = 0;
+
         for(int i=0; i<n; i++)
         {
-            maxAns = Math.max(maxAns, A[i] * (right[i] - left[i] - 1));
+            int width = right[i] - left[i] - 1; // width of rectangle is between smaller nearest right and smaller nearest left
+            ans = Math.max(ans, width * (heights[i]));
         }
 
-        return maxAns;
+        return ans;
     }
 
-    public int[] nearest_left(int[] A, int n)
+    public int[] nextSmallerLeft(int[] h, int n)
     {
         int[] ans = new int[n];
         Stack<Integer> st = new Stack<>();
 
         for(int i=0; i<n; i++)
         {
-            while(!st.isEmpty() && A[st.peek()] >= A[i])
+            while(!st.isEmpty() && h[i] <= h[st.peek()])
             {
-                st.pop();
+                st.pop(); //removing all the elements from st which are greater than curr on left end
             }
 
             if(!st.isEmpty())
@@ -71,22 +73,23 @@ public class Largest_Rectangle_in_Histogram {
             {
                 ans[i] = -1;
             }
+
             st.push(i);
         }
 
         return ans;
     }
 
-    public int[] nearest_right(int[] A, int n)
+    public int[] nextSmallerRight(int[] h, int n)
     {
         int[] ans = new int[n];
         Stack<Integer> st = new Stack<>();
 
         for(int i=n-1; i>=0; i--)
         {
-            while(!st.isEmpty() && A[st.peek()] >= A[i])
+            while(!st.isEmpty() && h[i] <= h[st.peek()])
             {
-                st.pop();
+                st.pop(); //removing all the elements from st which are greater than curr on right end
             }
 
             if(!st.isEmpty())
@@ -95,8 +98,9 @@ public class Largest_Rectangle_in_Histogram {
             }
             else
             {
-                ans[i] = n;
+                ans[i] = n; //adding n to handle corner test case
             }
+
             st.push(i);
         }
 

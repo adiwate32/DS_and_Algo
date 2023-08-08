@@ -41,9 +41,10 @@ public class Redundant_Braces {
 
         for(int i=0; i<A.length(); i++)
         {
-            char a = A.charAt(i);
+            char ch = A.charAt(i);
             int flag = 0;
-            if(a == ')')
+
+            if(ch == ')')
             {
                 while(st.peek() != '(')
                 {
@@ -54,10 +55,14 @@ public class Redundant_Braces {
                 {
                     st.pop();
                 }
+                else
+                {
+                    return 1;
+                }
             }
-            else
+            else if(ch == '+' || ch == '/' || ch == '*' || ch == '-' || ch == '(')
             {
-                st.push(a);
+                st.push(ch);
             }
         }
 
