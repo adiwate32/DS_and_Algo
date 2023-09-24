@@ -32,7 +32,7 @@ import java.util.Arrays;
  Explanation 1:
  Cut the rod of length 5 into 5 rods of length (1, 1, 1, 1, 1) and sell them for (3 + 3 + 3 + 3 + 3) = 15.
  Explanation 2:
- Cut the rod of length 5 into 3 rods of length (2, 2, 1) and sell them for (5 + 5 + 1) = 11.
+ Cut the rod of  length 5 into 3 rods of length (2, 2, 1) and sell them for (5 + 5 + 1) = 11.
  */
 public class Cutting_a_Rod {
 
