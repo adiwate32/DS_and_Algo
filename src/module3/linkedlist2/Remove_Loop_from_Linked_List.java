@@ -47,7 +47,7 @@ class ListNode {
     }
 }
 
-public class Remove_Loop_from_Linked_List {
+public class  Remove_Loop_from_Linked_List {
     public ListNode solve(ListNode A) {
 
         ListNode slow = A;
